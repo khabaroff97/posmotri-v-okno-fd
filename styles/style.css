@@ -18,9 +18,9 @@ html {
   font-size: 18px;
   background-color: #1b1919;
   display: flex;
+  justify-content: center; /* Весь контент по горизонтали и вертикали по центру.  */
   align-items: center;
-  justify-content: center;
-  gap: 30px;
+  
 }
 
 h1,
@@ -67,24 +67,24 @@ ol {
 /* Стили... */
 
 .content {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  inline-size: 100%;
-  block-size: 100%; /* Задал минимальную ширину, чтобы было не 1170, а как по макету 1200px. Для автоматического выравнивания исп. prettier */
+display: flex;
+flex-direction: row;
+align-items: end;
+gap:30px;
+width: 1140px; /* Задал ширину  блока по макету   */
 }
 
 .result {
   align-self: flex-end;
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 
 .result__video-container {
   position: relative;
   inline-size: 711px;
   block-size: 386px;
+  margin-bottom: 16px;
 }
 
 .result__video {
@@ -104,7 +104,7 @@ ol {
   display: flex;
   align-self: start;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
   border: none;
 }
 
@@ -185,7 +185,7 @@ ol {
 .content__list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 25px;
 }
 
 .content__card-link {
@@ -211,7 +211,7 @@ ol {
 }
 .content__video-card-description-container {
   flex-grow: 1;
-  max-width: 191px;
+  max-width: 196px;
 }
 
 .content__video-card-title {
@@ -341,11 +341,14 @@ ol {
   padding-top: 3px;
   padding-left: 3px;
   padding-right: 3px;
-  max-height: 103px; /* Ограничил высоту контейнера, чтобы везде был одинаковый отступ */
+  /* Удалил высоту контейнера */
 }
 
 .content__card-link:focus-visible {
   /* Задал правильное состояние focus-visible */
   outline: 1px #fff solid;
   outline-offset: 1px;
+}
+.content__card-link_current { /* Добавил класс для подчёркивания активной ссылки */
+  background-color: #545050;
 }
